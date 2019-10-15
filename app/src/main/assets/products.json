@@ -1,0 +1,38 @@
+[{
+		"name": "Microwave oven",
+		"price": 5000,
+		"id": "001",
+		"category": "Electronics"
+	},
+	{
+		"name": "Television",
+		"price": 32000,
+		"id": "002",
+		"category": "Electronics"
+	},
+	{
+		"name": "Vacuum Cleaner",
+		"price": 2500,
+		"id": "003",
+		"category": "Electronics"
+	},
+	{
+		"name": "Table",
+		"price": 1500,
+		"id": "004",
+		"category": "Furniture"
+	},
+	{
+		"name": "Chair",
+		"price": 499,
+		"id": "005",
+		"category": "Furniture"
+	},
+	{
+		"name": "Almirah",
+		"price": 2500,
+		"id": "006",
+		"category": "Furniture"
+	}
+
+]
