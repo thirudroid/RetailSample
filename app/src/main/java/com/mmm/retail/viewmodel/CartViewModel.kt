@@ -1,22 +1,11 @@
 package com.mmm.retail.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-
-import com.mmm.retail.RetailApplication
 import com.mmm.retail.helper.EventEnum
 import com.mmm.retail.helper.RetailDatabase
 import com.mmm.retail.model.Product
-
-import java.util.ArrayList
-
-import io.reactivex.Single
-import io.reactivex.SingleEmitter
-import io.reactivex.SingleOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
-import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 
 class CartViewModel(private val database:RetailDatabase) : BaseViewModel() {
@@ -37,13 +26,9 @@ class CartViewModel(private val database:RetailDatabase) : BaseViewModel() {
     fun deleteProduct(product: Product) {
         disposable.add(database.cartAccess().getSingleRecord(product.productId)
                 .subscribeOn(Schedulers.io())
-                .subscribe({ prod ->
+                .subscribe({
                     database.cartAccess().deleteRecord(product)
                     cartDeleteMutableLiveData.postValue(EventEnum.DELETE)
                 }, { it.printStackTrace() }))
-    }
-
-    interface OnProductGetListener {
-        fun onGetProduct(productList: List<Product>)
     }
 }

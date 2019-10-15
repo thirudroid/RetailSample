@@ -49,4 +49,5 @@ dependencies {
     api "androidx.lifecycle:lifecycle-extensions:2.1.0"
     //Koin
     implementation 'org.koin:koin-android-viewmodel:2.0.1'
+    androidTestImplementation 'org.koin:koin-test:2.0.1'
 }

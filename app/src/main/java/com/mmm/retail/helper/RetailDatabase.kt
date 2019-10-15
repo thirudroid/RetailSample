@@ -10,18 +10,6 @@ import com.mmm.retail.model.Product
 @Database(entities = [Product::class], version = 1)
 abstract class RetailDatabase : RoomDatabase() {
     abstract fun cartAccess(): CartAccess
-
-   /* companion object {
-        private var database: RetailDatabase? = null
-        fun getInstant(context: Context): RetailDatabase? {
-            if (database == null) {
-                database = Room.databaseBuilder(context,
-                        RetailDatabase::class.java, "Product").build()
-            }
-            return database
-        }
-    }*/
-
     companion object {
         @Volatile
         private var INSTANCE: RetailDatabase? = null
